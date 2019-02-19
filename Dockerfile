@@ -5,3 +5,5 @@ RUN curl -s https://packagecloud.io/install/repositories/fdio/release/script.deb
 RUN apt-get update \
  && apt-get install -y hicn-plugin --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
+RUN apt-get remove curl -y \
+ && apt-get autoremove -y
